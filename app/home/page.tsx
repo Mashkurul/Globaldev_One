@@ -1,4 +1,3 @@
-"use client";
 import Navbar from "@/app/components/Navbar";
 import Hero from "@/app/components/Hero";
 import Features from "@/app/components/features";
@@ -19,7 +18,6 @@ export default function Home() {
                 <HowItWorks />
                 <Security />
                 <CTA />
-
             </main>
             <Footer />
         </div>
