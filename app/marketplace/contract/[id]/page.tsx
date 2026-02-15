@@ -278,8 +278,8 @@ function ContractContent({ vehicleId }: { vehicleId: string }) {
                                             <p><strong>Date:</strong> {new Date().toLocaleDateString()}</p>
                                         </div>
                                         <div>
-                                            <p><strong>Renter:</strong> {user.name}</p>
-                                            <p><strong>Email:</strong> {user.email}</p>
+                                            <p><strong>Renter:</strong> {user?.name}</p>
+                                            <p><strong>Email:</strong> {user?.email}</p>
                                         </div>
                                     </div>
                                 </div>
