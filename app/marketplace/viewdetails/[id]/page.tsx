@@ -208,13 +208,15 @@ export default function CarDetailsPage({ params }: { params: Promise<{ id: strin
                             </div>
 
                             {user ? (
-                                <Link href={`/marketplace/book/${id}`} className={`w-full py-3 rounded-xl font-semibold transition flex items-center justify-center gap-2 ${
-                                    vehicle.status === "Available" 
-                                        ? "bg-blue-600 hover:bg-blue-700 text-white" 
-                                        : "bg-gray-400 text-gray-200 cursor-not-allowed"
-                                }`} disabled={vehicle.status !== "Available"}>
-                                    {vehicle.status === "Available" ? "Book Now" : "Currently Rented"}
-                                </Link>
+                                vehicle.status === "Available" ? (
+                                    <Link href={`/marketplace/book/${id}`} className="w-full py-3 rounded-xl font-semibold transition flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white">
+                                        Book Now
+                                    </Link>
+                                ) : (
+                                    <div className="w-full py-3 rounded-xl font-semibold transition flex items-center justify-center gap-2 bg-gray-400 text-gray-200 cursor-not-allowed">
+                                        Currently Rented
+                                    </div>
+                                )
                             ) : (
                                 <Link href="/auth/login" className="w-full py-3 rounded-xl font-semibold transition flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white">
                                     Login to Book

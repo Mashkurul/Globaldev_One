@@ -131,6 +131,8 @@ function PaymentContent({ vehicleId }: { vehicleId: string }) {
         setProcessing(false);
         
         // Store contract in user documents (in a real app, this would be an API call)
+        if (!bookingData) return;
+        
         const contractData = {
             id: `contract-${Date.now()}`,
             name: `Rental Agreement - ${bookingData.vehicle.name}`,
